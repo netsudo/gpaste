@@ -1,2 +1,4 @@
 *.pyc
 *.swp
+env/
+gpaste/paste.egg-info
