@@ -8,3 +8,4 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Date %r> <Content %r>' % (self.pub_date, self.content)
+
