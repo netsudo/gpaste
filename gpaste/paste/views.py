@@ -22,5 +22,6 @@ def index():
 
 @app.route('/<string:id_hash>')
 def content_page(id_hash):
-    print(id_hash)
-    
+    q = Post.query.get(hashids.decode(id_hash))
+
+    return render_template('content.html', content=q.content)
