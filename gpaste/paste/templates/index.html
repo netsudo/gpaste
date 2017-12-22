@@ -1,18 +1,12 @@
-<html>
-  </header>
-  </header>
+{% extends "layout.html" %}
 
-  <body>
-    <div id="content-field">
-      <div id="paste-form">
-        <form method="POST">
-          <textarea name="paste-content" rows="25" cols="80"></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+{% block content %}
+  <div id="content-field">
+    <div id="paste-form">
+      <form method="POST">
+        <textarea name="paste-content" rows="25" cols="80"></textarea>
+        <button type="submit">Submit</button>
+      </form>
     </div>
-  </body>
-
-  <footer>
-  </footer>
-</html>
+  </div>
+{% endblock %}
