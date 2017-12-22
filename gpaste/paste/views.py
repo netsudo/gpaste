@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, abort
 from hashids import Hashids
 from paste import app, db
 from paste.models import Post
@@ -14,7 +14,6 @@ def index():
         db.session.commit()
 
         id_hash = hashids.encode(p.id)
-        print(id_hash)
 
         return redirect(url_for('content_page', id_hash=id_hash))
 
@@ -22,6 +21,14 @@ def index():
 
 @app.route('/<string:id_hash>')
 def content_page(id_hash):
-    q = Post.query.get(hashids.decode(id_hash))
+    try:
+        plain_id = hashids.decode(id_hash)[0]
+    except IndexError:
+        abort(404)
+    q = Post.query.get_or_404(plain_id)
 
     return render_template('content.html', content=q.content)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
