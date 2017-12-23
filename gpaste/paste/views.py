@@ -13,6 +13,7 @@ def index():
         language = request.form['language']
         if language not in set(languageBox):
             abort(404)
+
         p = Post(content=content, language_highlight=language)
         db.session.add(p)
         db.session.commit()
