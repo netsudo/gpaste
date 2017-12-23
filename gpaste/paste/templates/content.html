@@ -3,11 +3,7 @@
 {% block content %}
 
 <div id="paste-content">
-  <pre><code class="{{ pasteHighlight.lower() }}">
-  {%- for line in pasteData.splitlines() -%}
-    {{ line + "\n" }}
-  {%- endfor -%}
-  </code></pre>
+  <pre><code class="{{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
 </div>
 
 {% endblock %}
