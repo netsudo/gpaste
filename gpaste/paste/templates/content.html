@@ -3,9 +3,11 @@
 {% block content %}
 
 <div id="paste-content">
-<pre><code class="{{ pasteHighlight.lower() }}">{% for line in pasteData.splitlines() -%}
-{{ line }}
-{% endfor -%}</code></pre>
+  <pre><code class="{{ pasteHighlight.lower() }}">
+{%- for line in pasteData.splitlines() -%}
+  {{ line }}
+{% endfor -%}
+  </code></pre>
 </div>
 
 {% endblock %}
