@@ -31,7 +31,7 @@ def content_page(id_hash):
         abort(404)
     q = Post.query.get_or_404(plain_id)
 
-    return render_template('content.html', pasteData=q.content)
+    return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight)
 
 @app.errorhandler(404)
 def page_not_found(e):
