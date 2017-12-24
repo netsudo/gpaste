@@ -1,4 +1,5 @@
 *.pyc
 *.swp
+*.css.map
 env/
 gpaste/paste.egg-info

@@ -1,0 +1,23 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #BB7C09;
+$secondary-color: #B88B4A;
+$background-color: #242331;
+$text-color: #DDCA7D;
+$second-text: #AEB4A9;
+
+body {
+    background-color: $background-color;
+    font: 100% $font-stack;
+    color: $second-text;
+}
+
+textarea {
+    background-color: $background-color;
+    color: $text-color;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color: $primary-color;
+    outline: none;
+    resize: none;
+}

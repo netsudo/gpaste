@@ -1,0 +1,16 @@
+body {
+  background-color: #242331;
+  font: 100% Helvetica, sans-serif;
+  color: #AEB4A9; }
+
+textarea {
+  background-color: #242331;
+  color: #DDCA7D;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-color: #BB7C09;
+  outline: none;
+  resize: none; }
+
+/*# sourceMappingURL=main.css.map */
