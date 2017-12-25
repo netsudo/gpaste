@@ -2,8 +2,14 @@
 <html>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/main.css') }}" />
   {% block styles %} {% endblock %}
-  <header>
-  </header>
+
+  <head>
+    <div class="nav">
+      <ul>
+        <li class="home"><a href="/">Gpaste</a></li>
+      </ul>
+    </div>
+  </head>
 
   <body>
     {% block content %} {% endblock %}

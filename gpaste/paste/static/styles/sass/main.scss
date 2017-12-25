@@ -2,13 +2,22 @@ $font-stack: Helvetica, sans-serif;
 $primary-color: #BB7C09;
 $secondary-color: #B88B4A;
 $background-color: #242331;
-$text-color: #DDCA7D;
+$text-color: #F0EAD6;
 $second-text: #AEB4A9;
+
+@font-face {
+	font-family: 'infinite_strokebolder';
+	src: url(/static/fonts/infinite-stroke.bolder-webfont.woff2) format('woff2'),
+		 url(/static/fonts/infinite-stroke.bolder-webfont.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
 body {
     background-color: $background-color;
     font: 100% $font-stack;
     color: $second-text;
+	margin: 0;
 }
 
 textarea {
@@ -20,4 +29,37 @@ textarea {
     border-color: $primary-color;
     outline: none;
     resize: none;
+}
+
+.nav {
+	ul {
+		list-style-type: none;
+		font-family: 'infinite_strokebolder';
+		font-size: 58px;
+		overflow: hidden;
+		top: 0;
+		width: 100%;
+		border-bottom: 1px solid #000000;
+		background-color: #29274b;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		float: center;
+	}
+
+	a {
+		display: block;
+		color: #BB7C09;
+		text-shadow:
+			   -1px -1px 0 $background-color,
+				1px -1px 0 $background-color,
+			   -1px 1px 0 $background-color,
+				1px 1px 0 $background-color;
+		text-align: center;
+		padding: 0px;
+		text-decoration: none;
+	}
+
 }

@@ -1,16 +1,43 @@
+@font-face {
+  font-family: 'infinite_strokebolder';
+  src: url(/static/fonts/infinite-stroke.bolder-webfont.woff2) format("woff2"), url(/static/fonts/infinite-stroke.bolder-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
 body {
   background-color: #242331;
   font: 100% Helvetica, sans-serif;
-  color: #AEB4A9; }
+  color: #AEB4A9;
+  margin: 0; }
 
 textarea {
   background-color: #242331;
-  color: #DDCA7D;
+  color: #F0EAD6;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   border-color: #BB7C09;
   outline: none;
   resize: none; }
+
+.nav ul {
+  list-style-type: none;
+  font-family: 'infinite_strokebolder';
+  font-size: 58px;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #000000;
+  background-color: #29274b;
+  margin: 0;
+  padding: 0; }
+.nav li {
+  float: center; }
+.nav a {
+  display: block;
+  color: #BB7C09;
+  text-shadow: -1px -1px 0 #242331, 1px -1px 0 #242331, -1px 1px 0 #242331, 1px 1px 0 #242331;
+  text-align: center;
+  padding: 0px;
+  text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */
