@@ -7,7 +7,7 @@ body {
   background-color: #242331;
   font: 100% Helvetica, sans-serif;
   color: #AEB4A9;
-  margin: 0; }
+  margin: auto; }
 
 textarea {
   background-color: #242331;
@@ -17,7 +17,13 @@ textarea {
   border-radius: 5px;
   border-color: #BB7C09;
   outline: none;
-  resize: none; }
+  resize: none;
+  width: 100%;
+  height: 70vh; }
+
+#content-field {
+  padding: 10px 15px 10px 10px;
+  height: 100%; }
 
 .nav ul {
   list-style-type: none;

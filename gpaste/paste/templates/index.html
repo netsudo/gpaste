@@ -2,18 +2,16 @@
 
 {% block content %}
   <div id="content-field">
-    <div id="paste-form">
-      <form method="POST">
-        <textarea name="paste-content" rows="25" cols="80"></textarea>
-        <select name="language">
+    <form method="POST">
+      <textarea name="paste-content"></textarea>
+      <select name="language">
 
-          {% for language in languages %}
-          <option value="{{ language }}">{{ language }}</option>
-          {% endfor %}
+        {% for language in languages %}
+        <option value="{{ language }}">{{ language }}</option>
+        {% endfor %}
 
-        </select>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 {% endblock %}
