@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block styles %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/atelier-cave-dark.css') }}" />
+{% endblock %}
+
 {% block content %}
 
 <div id="paste-content">
@@ -10,11 +14,9 @@
 
 {% block scripts %}
 
-  <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css">
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.initHighlightingOnLoad();
+          hljs.initLineNumbersOnLoad();</script>
 
 {% endblock %}
