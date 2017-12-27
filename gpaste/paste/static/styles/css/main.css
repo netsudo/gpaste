@@ -1,3 +1,4 @@
+/* Layout and nav style */
 @font-face {
   font-family: 'infinite_strokebolder';
   src: url(/static/fonts/infinite-stroke.bolder-webfont.woff2) format("woff2"), url(/static/fonts/infinite-stroke.bolder-webfont.woff) format("woff");
@@ -8,22 +9,6 @@ body {
   font: 100% Helvetica, sans-serif;
   color: #AEB4A9;
   margin: auto; }
-
-textarea {
-  background-color: #242331;
-  color: #F0EAD6;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  border-color: #BB7C09;
-  outline: none;
-  resize: none;
-  width: 100%;
-  height: 70vh; }
-
-#content-field {
-  padding: 10px 15px 10px 10px;
-  height: 100%; }
 
 .nav ul {
   list-style-type: none;
@@ -45,5 +30,44 @@ textarea {
   text-align: center;
   padding: 0px;
   text-decoration: none; }
+
+/* Homepage */
+textarea {
+  background-color: #242331;
+  color: #F0EAD6;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-color: #BB7C09;
+  outline: none;
+  resize: none;
+  width: 100%;
+  height: 70vh; }
+
+#content-field {
+  padding: 10px 15px 10px 10px;
+  height: 100%; }
+
+/* Content Page */
+#paste-content {
+  width: 100%;
+  /* for block of code */ }
+  #paste-content pre {
+    padding: 0px 10px 10px 10px; }
+  #paste-content td.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: #fff;
+    opacity: 0.32;
+    border-right: 1px solid rgba(187, 124, 9, 0.75);
+    vertical-align: top;
+    padding-right: 5px; }
+  #paste-content td.hljs-ln-code {
+    padding-left: 10px; }
 
 /*# sourceMappingURL=main.css.map */
