@@ -71,13 +71,14 @@ textarea {
 }
 
 #content-field {
-	padding: 10px 15px 10px 10px;
+	padding: 15px 15px 10px 10px;
 	height: 100%;
 }
 
 /* Content Page */
 
 #paste-content {
+    display: none; // Unhidden with JS after highlighting renders
     width: 100%;
     pre {
         padding: 0px 10px 10px 10px;
