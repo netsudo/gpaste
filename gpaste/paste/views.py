@@ -39,6 +39,22 @@ def content_page(id_hash):
 
     return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight)
 
+@app.route('/<string:id_hash>/d')
+def delete(id_hash):
+    try:
+        if id_hash in set(session['history']):
+            plain_id = hashids.decode(id_hash)[0]
+            q = Post.query.get_or_404(plain_id)
+            db.session.delete(q)
+            db.session.commit()
+
+            return redirect(url_for('index'))
+
+        return redirect(url_for('index'))
+
+    except KeyError:
+        return redirect(url_for('content_page', id_hash=id_hash))
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
