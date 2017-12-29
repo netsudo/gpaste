@@ -19,7 +19,9 @@ def index():
         db.session.commit()
 
         id_hash = hashids.encode(p.id)
-        if not session['history']:
+        try:
+            session['history']
+        except KeyError:
             session['history'] = []
         postHistory = session['history']
         postHistory.append(id_hash)
@@ -47,6 +49,8 @@ def delete(id_hash):
             q = Post.query.get_or_404(plain_id)
             db.session.delete(q)
             db.session.commit()
+
+            session['history'].remove(id_hash)
 
             return redirect(url_for('index'))
 
