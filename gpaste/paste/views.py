@@ -19,10 +19,8 @@ def index():
         db.session.commit()
 
         id_hash = hashids.encode(p.id)
-        try:
-            session['history']
-        except KeyError:
-            session['history'] = []
+        try: session['history']
+        except KeyError: session['history'] = []
         postHistory = session['history']
         postHistory.append(id_hash)
         session['history'] = postHistory
@@ -54,7 +52,7 @@ def delete(id_hash):
 
             return redirect(url_for('index'))
 
-        return redirect(url_for('index'))
+        return redirect(url_for('content_page', id_hash=id_hash))
 
     except KeyError:
         return redirect(url_for('content_page', id_hash=id_hash))
