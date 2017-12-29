@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, abort
+from flask import render_template, request, redirect, url_for, abort, session
 from hashids import Hashids
 from paste import app, db
 from paste.languages import languageBox
@@ -19,6 +19,11 @@ def index():
         db.session.commit()
 
         id_hash = hashids.encode(p.id)
+        if not session['history']:
+            session['history'] = []
+        postHistory = session['history']
+        postHistory.append(id_hash)
+        session['history'] = postHistory
 
         return redirect(url_for('content_page', id_hash=id_hash))
 
