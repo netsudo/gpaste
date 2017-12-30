@@ -31,13 +31,19 @@ def index():
 
 @app.route('/<string:id_hash>')
 def content_page(id_hash):
+    deletePermission = False
     try:
         plain_id = hashids.decode(id_hash)[0]
     except IndexError:
         abort(404)
     q = Post.query.get_or_404(plain_id)
+    
+    try:
+        if id_hash in set(session['history']):
+            deletePermission = True
+    except KeyError: pass
 
-    return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight)
+    return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight, permission=deletePermission)
 
 @app.route('/<string:id_hash>/d')
 def delete(id_hash):

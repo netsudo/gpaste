@@ -8,7 +8,9 @@
 
 <div id="paste-content">
   <div id="content-options">
-    <a href="{{ request.path }}/d">Delete</a>
+    {% if permission %}
+      <a href="{{ request.path }}/d">Delete</a>
+    {% endif %}
     <a href="{{ request.path }}/r">Raw</a>
   </div>
   <pre><code class="{{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
