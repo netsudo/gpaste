@@ -57,6 +57,16 @@ def delete(id_hash):
     except KeyError:
         return redirect(url_for('content_page', id_hash=id_hash))
 
+@app.route('/<string:id_hash>/r')
+def raw(id_hash):
+    try:
+        plain_id = hashids.decode(id_hash)[0]
+    except IndexError:
+        abort(404)
+    q = Post.query.get_or_404(plain_id)
+
+    return render_template('raw.html', pasteData=q.content)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
