@@ -54,6 +54,7 @@ textarea {
   width: 100%;
   /* for block of code */ }
   #paste-content pre {
+    margin: 0;
     padding: 0px 10px 10px 10px; }
   #paste-content td.hljs-ln-numbers {
     -webkit-touch-callout: none;
@@ -70,5 +71,16 @@ textarea {
     padding-right: 5px; }
   #paste-content td.hljs-ln-code {
     padding-left: 10px; }
+  #paste-content a:link {
+    padding-right: 5px;
+    font-size: 13px;
+    color: #BB7C09;
+    text-decoration: none; }
+  #paste-content a:hover {
+    opacity: 0.85; }
+  #paste-content #content-options {
+    display: block;
+    text-align: right;
+    padding: 15px 10px 2px 0px; }
 
 /*# sourceMappingURL=main.css.map */
