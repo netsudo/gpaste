@@ -7,6 +7,10 @@
 {% block content %}
 
 <div id="paste-content">
+  <div id="content-options">
+    <a href="{{ request.path }}/d">Delete</a>
+    <a href="{{ request.path }}/r">Raw</a>
+  </div>
   <pre><code class="{{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
 </div>
 
