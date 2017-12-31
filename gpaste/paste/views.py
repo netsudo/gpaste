@@ -11,8 +11,9 @@ def index():
     if request.method == 'POST':
         content = request.form['paste-content']
         language = request.form['language']
+        expiration = request.form['expiration']
         if language not in set(languageBox):
-            abort(404)
+            language = 'nohighlight'
 
         p = Post(content=content, language_highlight=language)
         db.session.add(p)
