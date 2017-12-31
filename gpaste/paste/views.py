@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, abort, session
 from hashids import Hashids
 from paste import app, db
-from paste.languages import languageBox
+from paste.forms import languageBox, expirationDate
 from paste.models import Post
 
 hashids = Hashids(salt="change this string in production please")
@@ -27,7 +27,7 @@ def index():
 
         return redirect(url_for('content_page', id_hash=id_hash))
 
-    return render_template('index.html', languages=languageBox)
+    return render_template('index.html', languages=languageBox, expiration=expirationDate)
 
 @app.route('/<string:id_hash>')
 def content_page(id_hash):

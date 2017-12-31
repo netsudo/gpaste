@@ -4,6 +4,17 @@
   <div id="content-field">
     <form method="POST">
       <textarea name="paste-content"></textarea>
+      <select name="expiration">
+
+        {% for expiry in expiration %}
+        {% if loop.index == 5 %}
+            <option selected value="{{ expiry }}">{{ expiry }}</option>
+          {% else %}
+            <option value="{{ expiry }}">{{ expiry }}</option>
+          {% endif %}
+        {% endfor %}
+
+      </select>
       <select name="language">
 
         {% for language in languages %}
