@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, abort, session
 from hashids import Hashids
 from paste import app, db
-from paste.forms import languageBox, expirationDate
+from paste.forms import languageBox, expirationDate, expiryDateAndType
 from paste.models import Post
 
 hashids = Hashids(salt="change this string in production please")
@@ -15,7 +15,9 @@ def index():
         if language not in set(languageBox):
             language = 'nohighlight'
 
-        p = Post(content=content, language_highlight=language)
+        burn, expiry = expiryDateAndType(expiration)
+        p = Post(content=content, language_highlight=language,
+                 expiry_date=expiry, burn_after_reading=burn)
         db.session.add(p)
         db.session.commit()
 
