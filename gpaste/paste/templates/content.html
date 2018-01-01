@@ -13,7 +13,7 @@
     {% endif %}
     <a href="{{ request.path }}/r">Raw</a>
   </div>
-  <pre><code class="{{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
+  <pre><code class="hljs {{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
 </div>
 
 {% endblock %}
