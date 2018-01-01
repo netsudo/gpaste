@@ -41,24 +41,24 @@ def expiryDateAndType(expiration):
 
     if expiration == 'Burn After Reading':
         burnAfterReading = True
-        date + timedelta(weeks=3) 
+        date += timedelta(weeks=3) 
 
     elif expiration == '10 Minutes':
-        date + timedelta(minutes=10)
+        date += timedelta(minutes=10)
 
     elif expiration == '1 Hour':
-        date + timedelta(hours=1)
+        date += timedelta(hours=1)
 
     elif expiration == '1 Day':
-        date + timedelta(days=1)
+        date += timedelta(days=1)
 
     elif expiration == '7 Days':
-        date + timedelta(days=7)
+        date += timedelta(days=7)
 
     elif expiration == '1 Month':
-        date + timedelta(days=31)
+        date += timedelta(days=31)
 
     else:
-        date + timedelta(days=7)
+        date += timedelta(days=7)
 
     return burnAfterReading, date

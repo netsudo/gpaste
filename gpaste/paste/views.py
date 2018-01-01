@@ -17,6 +17,7 @@ def index():
             language = 'nohighlight'
 
         burn, expiry = expiryDateAndType(expiration)
+        print(expiry)
         p = Post(content=content, language_highlight=language,
                  expiry_date=expiry, burn_after_reading=burn)
         db.session.add(p)
@@ -42,16 +43,17 @@ def content_page(id_hash):
         abort(404)
     q = Post.query.get_or_404(plain_id)
 
-    if q.expiry_date > datetime.now():
+    if q.expiry_date < datetime.now():
         db.session.delete(q)
         db.session.commit()
-    
+        abort(404)
+
     try:
         if id_hash in set(session['history']):
             deletePermission = True
     except KeyError: pass
 
-    return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight, permission=deletePermission)
+    return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight, permission=deletePermission, expiryDate=q.expiry_date)
 
 @app.route('/<string:id_hash>/d')
 def delete(id_hash):
@@ -78,6 +80,11 @@ def raw(id_hash):
     except IndexError:
         abort(404)
     q = Post.query.get_or_404(plain_id)
+
+    if q.expiry_date < datetime.now():
+        db.session.delete(q)
+        db.session.commit()
+        abort(404)
 
     return Response(q.content, mimetype='text/plain')
 
