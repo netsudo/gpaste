@@ -1,5 +1,6 @@
-from flask import render_template, request, redirect, url_for, abort, session
+from flask import render_template, request, redirect, url_for, abort, session, Response
 from hashids import Hashids
+from datetime import datetime
 from paste import app, db
 from paste.forms import languageBox, expirationDate, expiryDateAndType
 from paste.models import Post
@@ -40,6 +41,10 @@ def content_page(id_hash):
     except IndexError:
         abort(404)
     q = Post.query.get_or_404(plain_id)
+
+    if q.expiry_date > datetime.now():
+        db.session.delete(q)
+        db.session.commit()
     
     try:
         if id_hash in set(session['history']):
@@ -74,7 +79,7 @@ def raw(id_hash):
         abort(404)
     q = Post.query.get_or_404(plain_id)
 
-    return render_template('raw.html', pasteData=q.content)
+    return Response(q.content, mimetype='text/plain')
 
 @app.errorhandler(404)
 def page_not_found(e):
