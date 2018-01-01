@@ -17,7 +17,6 @@ def index():
             language = 'nohighlight'
 
         burn, expiry = expiryDateAndType(expiration)
-        print(expiry)
         p = Post(content=content, language_highlight=language,
                  expiry_date=expiry, burn_after_reading=burn)
         db.session.add(p)
@@ -51,7 +50,28 @@ def content_page(id_hash):
     try:
         if id_hash in set(session['history']):
             deletePermission = True
-    except KeyError: pass
+            
+            if q.burn_after_reading and q.viewed:
+                db.session.delete(q)
+                db.session.commit()
+                abort(404)
+        else:
+            if q.burn_after_reading and q.viewed:
+                db.session.delete(q)
+                db.session.commit()
+                abort(404)
+            elif q.burn_after_reading and not q.viewed:
+                q.viewed = True
+                db.session.commit()
+            
+    except KeyError:
+        if q.burn_after_reading and q.viewed:
+            db.session.delete(q)
+            db.session.commit()
+            abort(404)
+        elif q.burn_after_reading and not q.viewed:
+            q.viewed = True
+            db.session.commit()
 
     return render_template('content.html', pasteData=q.content, pasteHighlight=q.language_highlight, permission=deletePermission, expiryDate=q.expiry_date)
 
@@ -85,6 +105,31 @@ def raw(id_hash):
         db.session.delete(q)
         db.session.commit()
         abort(404)
+
+    try:
+        if id_hash in set(session['history']):
+            if q.burn_after_reading and q.viewed:
+                db.session.delete(q)
+                db.session.commit()
+                abort(404)
+        else:
+            if q.burn_after_reading and q.viewed:
+                db.session.delete(q)
+                db.session.commit()
+                abort(404)
+
+            elif q.burn_after_reading and not q.viewed:
+                q.viewed = True
+                db.session.commit()
+            
+    except KeyError:
+        if q.burn_after_reading and q.viewed:
+            db.session.delete(q)
+            db.session.commit()
+            abort(404)
+        elif q.burn_after_reading and not q.viewed:
+            q.viewed = True
+            db.session.commit()
 
     return Response(q.content, mimetype='text/plain')
 
