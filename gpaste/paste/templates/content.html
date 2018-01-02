@@ -7,14 +7,22 @@
 {% block content %}
 
 <div id="paste-content">
-  <p>{{ expiryDate }}</p>
+
+  <div id="expiry-date">
+    <p>Expires: {{ expiryDate }}</p>
+  </div>
+
   <div id="content-options">
     {% if permission %}
       <a href="{{ request.path }}/d">Delete</a>
     {% endif %}
     <a href="{{ request.path }}/r">Raw</a>
   </div>
-  <pre><code class="hljs {{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
+
+  <div id="paste">
+    <pre><code class="hljs {{ pasteHighlight.lower() }}">{{ pasteData }}</code></pre>
+  </div>
+
 </div>
 
 {% endblock %}
