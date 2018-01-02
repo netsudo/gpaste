@@ -73,24 +73,24 @@ textarea {
     padding-right: 5px; }
   #paste-content td.hljs-ln-code {
     padding-left: 10px; }
-  #paste-content a:link {
-    padding-right: 5px;
-    font-size: 13px;
-    color: #BB7C09;
-    text-decoration: none; }
-  #paste-content a:hover {
-    opacity: 0.85; }
-  #paste-content #content-options {
-    padding-right: 10px;
-    float: right; }
-  #paste-content p {
-    float: left;
-    margin: 0;
-    font-size: 13px;
-    padding: 2px 0px 0px 10px;
-    opacity: .55; }
   #paste-content #paste {
-    padding-top: 2px;
-    clear: both; }
+    padding-top: 2px; }
+  #paste-content #content-helpers {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row; }
+    #paste-content #content-helpers p {
+      margin: 0;
+      font-size: 13px;
+      padding: 2px 0px 0px 10px;
+      opacity: .55; }
+    #paste-content #content-helpers a:link {
+      padding-right: 12px;
+      font-size: 13px;
+      color: #BB7C09;
+      text-decoration: none; }
+    #paste-content #content-helpers a:hover {
+      opacity: 0.85; }
 
 /*# sourceMappingURL=main.css.map */
