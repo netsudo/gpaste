@@ -8,15 +8,13 @@
 
 <div id="paste-content">
 
-  <div id="expiry-date">
-    <p>Expires: {{ expiryDate }}</p>
-  </div>
+  <p>Expires: {{ expiryDate }}</p>
 
   <div id="content-options">
     {% if permission %}
       <a href="{{ request.path }}/d">Delete</a>
     {% endif %}
-    <a href="{{ request.path }}/r">Raw</a>
+      <a href="{{ request.path }}/r">Raw</a>
   </div>
 
   <div id="paste">
