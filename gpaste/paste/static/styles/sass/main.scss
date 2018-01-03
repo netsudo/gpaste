@@ -76,6 +76,21 @@ textarea {
 	height: 100%;
 }
 
+button {
+    padding: 8px 25px;
+    border-color: #29274b;
+    font-size: 16px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: $text-color;
+    background-color: $primary-color;
+}
+
+button:hover {
+    color: #fff;
+    background-color: rgba(187, 124, 9, .95)
+}
+
 /* Content Page */
 
 #paste-content {
