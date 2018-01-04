@@ -3,7 +3,7 @@
 {% block content %}
   <div id="content-field">
     <form method="POST">
-      <textarea name="paste-content"></textarea>
+      <textarea name="paste-content" required=true></textarea>
       <div id="user-controls">
         <div id="left-group">
           <label for="expiration">Expires</label>
@@ -36,4 +36,8 @@
       </div>
     </form>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/tab.js') }}"></script>
 {% endblock %}
