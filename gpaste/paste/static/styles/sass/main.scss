@@ -1,4 +1,4 @@
-$font-stack: Helvetica, sans-serif;
+$font-stack: Droid Sans;
 $primary-color: #BB7C09;
 $secondary-color: #B88B4A;
 $background-color: #242331;
@@ -17,7 +17,7 @@ $second-text: #AEB4A9;
 
 body {
     background-color: $background-color;
-    font: 100% $font-stack;
+	font-family: $font-stack;
     color: $second-text;
 	margin: auto;
 }
@@ -77,18 +77,30 @@ textarea {
 }
 
 button {
-    padding: 8px 25px;
+	border: none;
+    padding: 5px 25px;
     border-color: #29274b;
     font-size: 16px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     color: $text-color;
     background-color: $primary-color;
 }
 
 button:hover {
     color: #fff;
-    background-color: rgba(187, 124, 9, .95)
+    background-color: rgba(187, 124, 9, .95);
+
+}
+
+select {
+    padding: 3px 20px;
+	font-family: $font-stack;
+    font-size: 11pt;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
 }
 
 /* Content Page */

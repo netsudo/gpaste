@@ -6,7 +6,7 @@
   font-style: normal; }
 body {
   background-color: #242331;
-  font: 100% Helvetica, sans-serif;
+  font-family: Droid Sans;
   color: #AEB4A9;
   margin: auto; }
 
@@ -51,17 +51,27 @@ textarea {
   height: 100%; }
 
 button {
-  padding: 8px 25px;
+  border: none;
+  padding: 5px 25px;
   border-color: #29274b;
   font-size: 16px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   color: #F0EAD6;
   background-color: #BB7C09; }
 
 button:hover {
   color: #fff;
   background-color: rgba(187, 124, 9, 0.95); }
+
+select {
+  padding: 3px 20px;
+  font-family: Droid Sans;
+  font-size: 11pt;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px; }
 
 /* Content Page */
 #paste-content {
