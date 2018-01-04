@@ -44,11 +44,25 @@ textarea {
   outline: none;
   resize: none;
   width: 100%;
-  height: 70vh; }
+  height: 70vh;
+  font-family: inherit;
+  font-size: 11pt; }
 
 #content-field {
   padding: 0px 15px 10px 10px;
   height: 100%; }
+  #content-field #user-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row;
+    padding-top: 3px; }
+    #content-field #user-controls #language {
+      margin-right: 3px; }
+
+label {
+  opacity: .65;
+  font-size: 10pt; }
 
 button {
   border: none;
@@ -67,7 +81,7 @@ button:hover {
 
 select {
   padding: 3px 20px;
-  font-family: Droid Sans;
+  font-family: inherit;
   font-size: 11pt;
   border-radius: 2px;
   -webkit-border-radius: 2px;

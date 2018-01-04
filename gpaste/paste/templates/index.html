@@ -4,26 +4,36 @@
   <div id="content-field">
     <form method="POST">
       <textarea name="paste-content"></textarea>
-      <select name="expiration">
+      <div id="user-controls">
+        <div id="left-group">
+          <label for="expiration">Expires</label>
+          <select name="expiration" id="expiration">
 
-        {% for expiry in expiration %}
-        {% if loop.index == 5 %}
-            <option selected value="{{ expiry }}">{{ expiry }}</option>
-          {% else %}
-            <option value="{{ expiry }}">{{ expiry }}</option>
-          {% endif %}
-        {% endfor %}
+            {% for expiry in expiration %}
+            {% if loop.index == 5 %}
+                <option selected value="{{ expiry }}">{{ expiry }}</option>
+              {% else %}
+                <option value="{{ expiry }}">{{ expiry }}</option>
+              {% endif %}
+            {% endfor %}
 
-      </select>
-      <select name="language">
+          </select>
+        </div>
 
-        <option value="None">None</option>
-        {% for language in languages %}
-        <option value="{{ language }}">{{ language }}</option>
-        {% endfor %}
+        <div id="right-group">
+          <label for="language">Highlight</label>
+          <select name="language" id="language">
 
-      </select>
-      <button type="submit">Submit</button>
+            <option value="None">None</option>
+            {% for language in languages %}
+            <option value="{{ language }}">{{ language }}</option>
+            {% endfor %}
+
+          </select>
+
+          <button type="submit">Submit</button>
+        </div>
+      </div>
     </form>
   </div>
 {% endblock %}
