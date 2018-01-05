@@ -16,6 +16,9 @@ def index():
         if language not in set(languageBox):
             language = 'nohighlight'
 
+        if content.isspace():
+            return redirect(url_for('index'))
+
         burn, expiry = expiryDateAndType(expiration)
         p = Post(content=content, language_highlight=language,
                  expiry_date=expiry, burn_after_reading=burn)

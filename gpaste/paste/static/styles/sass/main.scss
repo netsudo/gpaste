@@ -207,6 +207,7 @@ select {
 	}
 
 	p {
-		color: #000;
+		color: $text-color;
+		opacity: .8;
 	}
 }

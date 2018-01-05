@@ -147,6 +147,7 @@ select {
     max-height: 100%;
     max-width: 100%; }
   #invalid-page p {
-    color: #000; }
+    color: #F0EAD6;
+    opacity: .8; }
 
 /*# sourceMappingURL=main.css.map */
