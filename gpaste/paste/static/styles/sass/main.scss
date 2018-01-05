@@ -59,6 +59,7 @@ body {
 /* Homepage */
 
 textarea {
+	width: 100%;
     background-color: $background-color;
     color: $text-color;
     -webkit-border-radius: 3px;
@@ -68,7 +69,6 @@ textarea {
 	border-width: 1px;
     outline: none;
     resize: none;
-	width: 100%;
 	height: 70vh;
 	font-family: inherit;
 	font-size: 11pt;
@@ -187,5 +187,26 @@ select {
 
 	a:hover {
 		opacity: 0.85;
+	}
+}
+
+/* 404 Page */
+
+#invalid-page {
+	text-align: center;
+	height: 75vh;
+	margin: 0;
+	padding: 0;
+
+	img {
+		padding: 0;
+		display: block;
+		margin: 0 auto;
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+	p {
+		color: #000;
 	}
 }
