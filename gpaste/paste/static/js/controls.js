@@ -10,10 +10,13 @@ for(var i=0;i<count;i++){
             this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
             this.selectionEnd = s+1; 
         }
-
-        //Check for Ctrl+Enter to submit post
-        else if((e.keyCode==13 || e.which==13) && (e.ctrlKey || e.which==17)){
-            document.getElementById("paste-submit").click();
-        } 
     }
 }
+
+document.onkeydown = function(e) {
+    //Check for Ctrl+Enter to submit post
+    if((e.keyCode==13 || e.which==13) && (e.ctrlKey || e.which==17)){
+        document.getElementById("paste-submit").click();
+    } 
+}
+
