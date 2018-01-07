@@ -214,30 +214,30 @@ select {
 
 /* Scrollbar */
 
-body::-webkit-scrollbar {
+::-moz-scrollbar {
 	width: .4em;
 }
 
-body::-webkit-scrollbar-track {
+::-moz-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: $text-color;
-  outline: 1px solid $primary-color;
+::-moz-scrollbar-thumb {
+	background-color: $text-color;
+	outline: 20px solid $primary-color;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
 
-textarea::-webkit-scrollbar {
+::-webkit-scrollbar {
 	width: .4em;
 }
 
-textarea::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
-textarea::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	background-color: $text-color;
 	outline: 20px solid $primary-color;
 	border-radius: 3px;
