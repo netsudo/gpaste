@@ -65,7 +65,7 @@ label {
   opacity: .65;
   font-size: 10pt; }
 
-button {
+#paste-submit {
   border: none;
   padding: 5px 25px;
   border-color: #29274b;
@@ -76,9 +76,31 @@ button {
   color: #F0EAD6;
   background-color: rgba(187, 124, 9, 0.95); }
 
-button:hover {
+#paste-submit:hover {
   color: #fff;
   background-color: #BB7C09; }
+
+#encrypt-button {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: transparent; }
+
+#encrypt-button:hover {
+  opacity: .75; }
+
+.icon {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 6px;
+  left: 2px; }
+
+#unlocked-icon {
+  fill: #F0EAD6;
+  color: #F0EAD6; }
 
 select {
   padding: 3px 20px;

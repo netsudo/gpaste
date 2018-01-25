@@ -18,6 +18,10 @@
             {% endfor %}
 
           </select>
+
+          <button id="encrypt-button">
+            <object type="image/svg+xml" data="{{ url_for('static', filename='images/icons/145-unlocked.svg') }}" class="icon"></object>
+          </button>
         </div>
 
         <div id="right-group">
@@ -26,7 +30,7 @@
 
             <option value="None">None</option>
             {% for language in languages %}
-            <option value="{{ language }}">{{ language }}</option>
+              <option value="{{ language }}">{{ language }}</option>
             {% endfor %}
 
           </select>
