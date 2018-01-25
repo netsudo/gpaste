@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/main.css') }}" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
-  {% block styles %} {% endblock %}
-
   <head>
-    <div class="nav">
-      <ul>
-        <li class="home"><a href="/">Gpaste</a></li>
-      </ul>
-    </div>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/main.css') }}" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+    {% block styles %} {% endblock %}
   </head>
 
   <body>
+
+    <header>
+      <div class="nav">
+        <ul>
+          <li class="home"><a href="/">Gpaste</a></li>
+        </ul>
+      </div>
+    </header>
+
     {% block content %} {% endblock %}
+
   </body>
 
   <footer>
