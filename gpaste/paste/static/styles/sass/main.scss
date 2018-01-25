@@ -2,6 +2,7 @@ $font-stack: Droid Sans;
 $primary-color: #BB7C09;
 $secondary-color: #B88B4A;
 $background-color: #242331;
+$accent-color: #29274b;
 $text-color: #F0EAD6;
 $second-text: #AEB4A9;
 
@@ -32,7 +33,7 @@ body {
 		top: 0;
 		width: 100%;
 		border-bottom: 1px solid #000000;
-		background-color: #29274b;
+		background-color: $accent-color;
 		margin: 0;
 		padding: 0;
 	}
@@ -99,7 +100,7 @@ label {
 button {
 	border: none;
     padding: 5px 25px;
-    border-color: #29274b;
+    border-color: $accent-color;
     font-size: 12pt;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -292,26 +293,54 @@ select {
 .modal-content {
     background-color: #inherit;
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%
+    padding: 0px;
+    border: 1px solid $primary-color;
+    border-radius: 2px;
+    width: 50%;
 }
 
 .close {
-    color: #aaa;
+    color: $text-color;
     float: right;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    opacity: .8;
     text-decoration: none;
     cursor: pointer;
 }
 
+.modal-header {
+    padding: 5px 10px;
+    background-color: $accent-color;
+    color: $text-color;
+    border-bottom: 1px solid #000;
+
+    h2 {
+        margin: 0;
+    }
+}
+
 .modal-footer {
-    border-top: 1px solid;
+    border-top: 1px solid #000;
     text-align: right;
+    background-color: $accent-color;
+
+    button {
+        margin: 10px 10px 10px 0px;
+    }
+}
+
+.modal-body {
+    margin: 20px 0px 20px 10px;
+
+    input[type=password] {
+        border-radius: 2px;
+        outline: none;
+        width: 60%;
+        height: 100%;
+    }
 }

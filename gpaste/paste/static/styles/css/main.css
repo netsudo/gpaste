@@ -216,24 +216,44 @@ select {
 .modal-content {
   background-color: #inherit;
   margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; }
+  padding: 0px;
+  border: 1px solid #BB7C09;
+  border-radius: 2px;
+  width: 50%; }
 
 .close {
-  color: #aaa;
+  color: #F0EAD6;
   float: right;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold; }
 
 .close:hover,
 .close:focus {
-  color: black;
+  opacity: .8;
   text-decoration: none;
   cursor: pointer; }
 
+.modal-header {
+  padding: 5px 10px;
+  background-color: #29274b;
+  color: #F0EAD6;
+  border-bottom: 1px solid #000; }
+  .modal-header h2 {
+    margin: 0; }
+
 .modal-footer {
-  border-top: 1px solid;
-  text-align: right; }
+  border-top: 1px solid #000;
+  text-align: right;
+  background-color: #29274b; }
+  .modal-footer button {
+    margin: 10px 10px 10px 0px; }
+
+.modal-body {
+  margin: 20px 0px 20px 10px; }
+  .modal-body input[type=password] {
+    border-radius: 2px;
+    outline: none;
+    width: 60%;
+    height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
