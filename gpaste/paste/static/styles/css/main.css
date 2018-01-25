@@ -65,7 +65,7 @@ label {
   opacity: .65;
   font-size: 10pt; }
 
-#paste-submit {
+button {
   border: none;
   padding: 5px 25px;
   border-color: #29274b;
@@ -76,12 +76,15 @@ label {
   color: #F0EAD6;
   background-color: rgba(187, 124, 9, 0.95); }
 
-#paste-submit:hover {
+button:hover {
   color: #fff;
   background-color: #BB7C09; }
 
 #encrypt-button {
   display: inline-block;
+  position: relative;
+  top: 6px;
+  left: 2px;
   padding: 0;
   margin: 0;
   border: 0;
@@ -94,9 +97,7 @@ label {
 .icon {
   width: 25px;
   height: 25px;
-  position: relative;
-  top: 6px;
-  left: 2px; }
+  pointer-events: none; }
 
 #unlocked-icon {
   fill: #F0EAD6;
@@ -174,7 +175,8 @@ select {
 
 /* Scrollbar */
 ::-moz-scrollbar {
-  width: .4em; }
+  width: .4em;
+  height: .5em; }
 
 ::-moz-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
@@ -186,7 +188,8 @@ select {
   -webkit-border-radius: 3px; }
 
 ::-webkit-scrollbar {
-  width: .4em; }
+  width: .4em;
+  height: .5em; }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
@@ -196,5 +199,41 @@ select {
   outline: 20px solid #BB7C09;
   border-radius: 3px;
   -webkit-border-radius: 3px; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rbg(0, 0, 0);
+  background-color: rbga(0, 0, 0, 0.4); }
+
+.modal-content {
+  background-color: #inherit;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; }
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer; }
+
+.modal-footer {
+  border-top: 1px solid;
+  text-align: right; }
 
 /*# sourceMappingURL=main.css.map */

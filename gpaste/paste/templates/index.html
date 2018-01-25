@@ -38,10 +38,31 @@
           <button type="submit" id="paste-submit">Submit</button>
         </div>
       </div>
+
+      <div id="encrypt-modal" class="modal">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Encryption Password</h2>
+          </div>
+          <div class="modal-body">
+            <label for="encryption-password">Password</label>
+            <input type="text" id="encryption-password">
+          </div>
+          <div class="modal-footer">
+            <button>Okay</button>
+          </div>
+
+        </div>
+
+      </div>
+
     </form>
   </div>
 {% endblock %}
 
 {% block scripts %}
   <script type="text/javascript" src="{{ url_for('static', filename='js/controls.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/modal.js') }}"></script>
 {% endblock %}
