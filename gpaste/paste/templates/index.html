@@ -19,7 +19,7 @@
 
           </select>
 
-          <button id="encrypt-button">
+          <button id="encrypt-button" onclick="event.preventDefault();" class="md-trigger" data-modal="encrypt-modal">
             <object type="image/svg+xml" data="{{ url_for('static', filename='images/icons/145-unlocked.svg') }}" class="icon"></object>
           </button>
         </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div id="encrypt-modal" class="modal">
+      <div id="encrypt-modal" class="modal modal-effect">
 
         <div class="modal-content">
           <div class="modal-header">
@@ -52,12 +52,16 @@
           <div class="modal-footer">
             <button>Okay</button>
           </div>
+
         </div>
 
       </div>
 
     </form>
   </div>
+
+  <div class="md-overlay"></div>
+
 {% endblock %}
 
 {% block scripts %}
