@@ -1,5 +1,11 @@
 /* Courtesy of https://github.com/codrops/ModalWindowEffects for effects and JS */
 
+function getFocus() {
+    // This is to gain focus on the modal click
+    setTimeout(function () {
+        document.getElementById("encryption-password").focus(); }, 250);
+}
+
 function classReg( className ) {
   return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
 }
@@ -41,6 +47,7 @@ var ModalEffects = (function() {
 			el.addEventListener( 'click', function( ev ) {
 				addClass( modal, 'md-show' );
                 addClass( overlay, 'md-show' );
+                getFocus();
 				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );
 			});
