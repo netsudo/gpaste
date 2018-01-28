@@ -20,7 +20,8 @@ body {
     background-color: $background-color;
 	font-family: $font-stack;
     color: $second-text;
-	margin: auto;
+    margin: auto;
+    width: 100%;
 }
 
 .nav {
@@ -59,34 +60,35 @@ body {
 
 /* Homepage */
 
-textarea {
-	width: 100%;
-    background-color: $background-color;
-    color: $text-color;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    border-color: $primary-color;
-	border-width: 1px;
-    outline: none;
-    resize: none;
-	height: 70vh;
-	font-family: inherit;
-	font-size: 11pt;
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out; 
-}
-
-textarea:focus {
-    box-shadow: 0 0 3px rgba(187, 124, 9, 1);
-    border: 1px solid rgba(187, 124, 9, 1);
-}
-
 #content-field {
-	padding: 0px 15px 10px 10px;
+	padding: 0px 10px 10px 10px;
 	height: 100%;
+
+    textarea {
+        box-sizing: border-box;
+        width: 100%;
+        background-color: $background-color;
+        color: $text-color;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        border-color: $primary-color;
+        border-width: 1px;
+        outline: none;
+        resize: none;
+        height: 70vh;
+        font-family: inherit;
+        font-size: 11pt;
+        -webkit-transition: box-shadow 0.30s ease-in-out;
+        -moz-transition: box-shadow 0.30s ease-in-out;
+        -ms-transition: box-shadow 0.30s ease-in-out;
+        -o-transition: box-shadow 0.30s ease-in-out; 
+    }
+
+    textarea:focus {
+        box-shadow: 0 0 3px rgba(187, 124, 9, 1);
+        border: 1px solid rgba(187, 124, 9, 1);
+    }
 
     #user-controls {
         display: flex;
