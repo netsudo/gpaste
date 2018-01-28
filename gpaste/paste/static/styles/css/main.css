@@ -47,7 +47,15 @@ textarea {
   resize: none;
   height: 70vh;
   font-family: inherit;
-  font-size: 11pt; }
+  font-size: 11pt;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out; }
+
+textarea:focus {
+  box-shadow: 0 0 3px #bb7c09;
+  border: 1px solid #bb7c09; }
 
 #content-field {
   padding: 0px 15px 10px 10px;
@@ -176,7 +184,7 @@ select {
 /* Scrollbar */
 ::-moz-scrollbar {
   width: .4em;
-  height: .5em; }
+  height: .4em; }
 
 ::-moz-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
@@ -189,7 +197,7 @@ select {
 
 ::-webkit-scrollbar {
   width: .4em;
-  height: .5em; }
+  height: .4em; }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }

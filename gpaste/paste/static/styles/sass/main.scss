@@ -73,6 +73,15 @@ textarea {
 	height: 70vh;
 	font-family: inherit;
 	font-size: 11pt;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out; 
+}
+
+textarea:focus {
+    box-shadow: 0 0 3px rgba(187, 124, 9, 1);
+    border: 1px solid rgba(187, 124, 9, 1);
 }
 
 #content-field {
@@ -244,7 +253,7 @@ select {
 
 ::-moz-scrollbar {
 	width: .4em;
-    height: .5em;
+    height: .4em;
 }
 
 ::-moz-scrollbar-track {
@@ -260,7 +269,7 @@ select {
 
 ::-webkit-scrollbar {
 	width: .4em;
-    height: .5em;
+    height: .4em;
 }
 
 ::-webkit-scrollbar-track {
