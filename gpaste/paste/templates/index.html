@@ -3,7 +3,7 @@
 {% block content %}
   <div id="content-field">
     <form method="POST">
-      <textarea name="paste-content" required=true></textarea>
+      <textarea name="paste-content" required=true autofocus></textarea>
       <div id="user-controls">
         <div id="left-group">
           <label for="expiration">Expires</label>
@@ -50,7 +50,7 @@
             <object type="image/svg+xml" data="{{ url_for('static', filename='images/icons/142-key.svg') }}"></object><input type="password" id="encryption-password" tabindex="0">
           </div>
           <div class="modal-footer">
-            <button>Okay</button>
+            <button onclick="event.preventDefault();">Okay</button>
           </div>
 
         </div>
