@@ -8,10 +8,10 @@ function getFocus() {
 
 function checkForPassword() {
 	var encryptForm = document.getElementById("encryption-password");
+	var icon = document.getElementById("status-icon");
+	var dataElement = icon.getAttribute("data");
 
 	if ( encryptForm.value === "" ) {
-		var icon = document.getElementById("status-icon");
-		var dataElement = icon.getAttribute("data");
 		if ( !dataElement.endsWith("145-unlocked.svg") ) {
 			var unlockedIcon = dataElement.replace("144-lock.svg", "145-unlocked.svg");
 			icon.setAttribute("data", unlockedIcon);
@@ -19,8 +19,6 @@ function checkForPassword() {
 	}
 
 	else {
-		var icon = document.getElementById("status-icon");
-		var dataElement = icon.getAttribute("data");
 		if ( !dataElement.endsWith("144-lock.svg") ) {
 			var lockIcon = dataElement.replace("145-unlocked.svg", "144-lock.svg");
 			icon.setAttribute("data", lockIcon);
