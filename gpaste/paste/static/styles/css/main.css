@@ -106,10 +106,6 @@ button:hover {
   height: 25px;
   pointer-events: none; }
 
-#unlocked-icon {
-  fill: #F0EAD6;
-  color: #F0EAD6; }
-
 select {
   padding: 3px 20px;
   font-family: inherit;
