@@ -6,6 +6,28 @@ function getFocus() {
         document.getElementById("encryption-password").focus(); }, 250);
 }
 
+function checkForPassword() {
+	var encryptForm = document.getElementById("encryption-password");
+
+	if ( encryptForm.value === "" ) {
+		var icon = document.getElementById("status-icon");
+		var dataElement = icon.getAttribute("data");
+		if ( !dataElement.endsWith("145-unlocked.svg") ) {
+			var unlockedIcon = dataElement.replace("144-lock.svg", "145-unlocked.svg");
+			icon.setAttribute("data", unlockedIcon);
+		}
+	}
+
+	else {
+		var icon = document.getElementById("status-icon");
+		var dataElement = icon.getAttribute("data");
+		if ( !dataElement.endsWith("144-lock.svg") ) {
+			var lockIcon = dataElement.replace("145-unlocked.svg", "144-lock.svg");
+			icon.setAttribute("data", lockIcon);
+		}
+	}
+}
+
 function classReg( className ) {
   return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
 }
@@ -42,6 +64,7 @@ var ModalEffects = (function() {
 
             function removeModalHandler() {
 				removeModal( hasClass( el, 'md-setperspective' ) );
+				checkForPassword();
 			}
 
 			el.addEventListener( 'click', function( ev ) {
