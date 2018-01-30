@@ -56,7 +56,8 @@ var ModalEffects = (function() {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
 				close = modal.querySelector( '.close' ),
-				okay = modal.querySelector( '#okay-btn' );
+				okay = modal.querySelector( '#okay-btn' ),
+				input = modal.querySelector( '#encryption-password' );
 
 			function removeModal( hasPerspective ) {
 				removeClass( modal, 'md-show' );
@@ -84,6 +85,14 @@ var ModalEffects = (function() {
 			okay.addEventListener( 'click', function( ev ) {
 				ev.stopPropagation();
                 removeModalHandler();
+			});
+
+			input.addEventListener( 'keydown', function( ev ) {
+				if (ev.key === "Enter") {
+					ev.preventDefault();
+					ev.stopPropagation();
+					removeModalHandler();
+				}
 			});
 
 		} );
