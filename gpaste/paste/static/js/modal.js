@@ -1,5 +1,10 @@
 /* Courtesy of https://github.com/codrops/ModalWindowEffects for effects and JS */
 
+var overlayField = document.querySelector( '.md-overlay' );
+overlayField.style.display = "block";
+var modalField = document.querySelector( '.modal-content' );
+modalField.style.display = "block";
+
 function getFocus() {
     // This is to gain focus on the modal click
     setTimeout(function () {
