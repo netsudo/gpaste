@@ -283,6 +283,7 @@ select {
 /* Modal */
 
 .modal {
+    visibility: hidden;
 	position: fixed;
 	top: 35%;
     left: 50%;
@@ -290,7 +291,6 @@ select {
 	max-width: 500px;
 	height: auto;
 	z-index: 5000;
-	visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -301,18 +301,19 @@ select {
 }
 
 .md-overlay {
+    display: none;
+    visibility: hidden;
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	visibility: hidden;
 	top: 0;
 	left: 0;
 	z-index: 1000;
 	opacity: 0;
 	background: rgba(0,0,0,0.8);
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .md-show.md-overlay {
@@ -330,9 +331,9 @@ select {
 	-ms-transform: scale(0.7);
 	transform: scale(0.7);
 	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .md-show.modal-effect .modal-content {
@@ -344,6 +345,9 @@ select {
 }
 
 .modal-content {
+    margin: 0 auto;
+    display: none;
+    position: relative;
     background-color: $background-color;
     border: 1px solid $primary-color;
     border-radius: 2px;
@@ -417,10 +421,10 @@ select {
         height: 30px;
         font-size: 40px;
         color: $text-color;
-        -webkit-transition: all 0.30s ease-in-out;
-        -moz-transition: all 0.30s ease-in-out;
-        -ms-transition: all 0.30s ease-in-out;
-        -o-transition: all 0.30s ease-in-out; 
+        -webkit-transition: box-shadow 0.30s ease-in-out;
+        -moz-transition: box-shadow 0.30s ease-in-out;
+        -ms-transition: box-shadow 0.30s ease-in-out;
+        -o-transition: box-shadow 0.30s ease-in-out; 
     }
 
     input[type=password]:focus {

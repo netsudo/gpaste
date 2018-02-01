@@ -9,10 +9,10 @@ def encryptContent(content, password):
     salt = os.urandom(16)
 
     kdf = Scrypt(salt=salt, length=32, n=2**14, r=8, p=1, backend=backend)
-    key = base64.urlsafe_b64encode(kdf.derive(password))
+    key = base64.urlsafe_b64encode(kdf.derive(b"%a" % password))
 
     f = Fernet(key)
-    token = f.encrypt(b"%s" % content)
+    token = f.encrypt(b"%a" % content)
 
     return salt, token
 
