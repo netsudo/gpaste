@@ -1,7 +1,9 @@
 from flask import render_template, request, redirect, url_for, abort, session, Response
-import os
+
+from paste.encrypt import encryptContent
 from hashids import Hashids
 from datetime import datetime
+
 from paste import app, db
 from paste.forms import languageBox, expirationDate, expiryDateAndType
 from paste.models import Post
@@ -14,6 +16,7 @@ def index():
         content = request.form['paste-content']
         language = request.form['language']
         expiration = request.form['expiration']
+        encryptPassword = request.form['encryption-password']
         if language not in set(languageBox):
             language = 'nohighlight'
 
@@ -21,8 +24,16 @@ def index():
             return redirect(url_for('index'))
 
         burn, expiry = expiryDateAndType(expiration)
-        p = Post(content=content, language_highlight=language,
-                 expiry_date=expiry, burn_after_reading=burn)
+        if encryptPassword:
+            salt, encryptedContent = encryptContent(content, encryptPassword)
+
+            p = Post(encrypted_content=encryptedContent, language_highlight=language,
+                     expiry_date=expiry, burn_after_reading=burn, salt=salt)
+
+        else:
+            burn, expiry = expiryDateAndType(expiration)
+            p = Post(content=content, language_highlight=language,
+                     expiry_date=expiry, burn_after_reading=burn)
         db.session.add(p)
         db.session.commit()
 
