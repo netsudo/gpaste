@@ -1,9 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <div id="auth-form">
-    <form>
-      <input type="password" id="pw-input">
+
+  <div class="auth-form">
+    <form method="POST">
+
+      <div class="auth-content">
+        <div class="auth-header">
+        </div>
+
+        <div class="auth-body">
+          <input type="password" id="pw-input">
+        </div>
+
+        <div class="auth-footer">
+        </div>
+      </div>
+
     </form>
   </div>
+
 {% endblock %}
