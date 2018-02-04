@@ -434,19 +434,8 @@ select {
 
 /* Auth Page */
 
-#auth-wrapper {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
 .auth-form {
-    position: relative;
+    position: fixed;
 	top: 35%;
     left: 50%;
 	width: 95%;
@@ -532,9 +521,6 @@ select {
 }
 
 @media screen and (max-height: 600px) {
-    #auth-wrapper {
-        position: static;
-    }
     .auth-form {
         position: static;
         transform: none;

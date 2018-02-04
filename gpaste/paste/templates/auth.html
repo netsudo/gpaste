@@ -2,26 +2,24 @@
 
 {% block content %}
 
-  <div id="auth-wrapper">
-    <div class="auth-form">
-      <form method="POST">
+  <div class="auth-form">
+    <form method="POST">
 
-        <div class="auth-content">
-          <div class="auth-header">
-            <h3>Unlock Password</h3>
-          </div>
-
-          <div class="auth-body">
-            <object type="image/svg+xml" data="{{ url_for('static', filename='images/icons/142-key.svg') }}"></object><input type="password" name="unlock-password" id="unlock-password" tabindex="0" autofocus>
-          </div>
-
-          <div class="auth-footer">
-            <button id="okay-btn" onclick="event.preventDefault();">Okay</button>
-          </div>
+      <div class="auth-content">
+        <div class="auth-header">
+          <h3>Unlock Password</h3>
         </div>
 
-      </form>
-    </div>
+        <div class="auth-body">
+          <object type="image/svg+xml" data="{{ url_for('static', filename='images/icons/142-key.svg') }}"></object><input type="password" name="unlock-password" id="unlock-password" tabindex="0" autofocus>
+        </div>
+
+        <div class="auth-footer">
+          <button id="okay-btn">Okay</button>
+        </div>
+      </div>
+
+    </form>
   </div>
 
 {% endblock %}
