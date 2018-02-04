@@ -434,15 +434,33 @@ select {
 
 /* Auth Page */
 
-.auth-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
+#auth-wrapper {
+    position: fixed;
     width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.auth-form {
+    position: relative;
+    margin-top: 1px;
+	top: 35%;
+    left: 50%;
+	width: 95%;
+	max-width: 500px;
+	height: auto;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
 }
 
 .auth-content {
+    display: block;
     max-width: 500px;
     background-color: $background-color;
     border: 1px solid $primary-color;
@@ -510,5 +528,16 @@ select {
 
     input[type=password]:focus {
         box-shadow: 0 0 3px $primary-color;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #auth-wrapper {
+        position: static;
+    }
+    .auth-form {
+        position: static;
+        transform: none;
+        margin: 0 auto;
     }
 }
