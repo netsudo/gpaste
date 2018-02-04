@@ -344,12 +344,12 @@ select {
 
 .auth-form {
   position: relative;
-  margin-top: 1px;
   top: 35%;
   left: 50%;
   width: 95%;
   max-width: 500px;
   height: auto;
+  padding-bottom: 10px;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
