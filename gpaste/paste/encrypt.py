@@ -25,5 +25,6 @@ class Encrypt:
 
         try:
             return f.decrypt(token)
+
         except InvalidToken:
             return False
